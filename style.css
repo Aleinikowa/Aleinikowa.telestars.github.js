@@ -274,9 +274,17 @@ h4 {
     justify-content: center;
     flex-wrap: wrap;
   }
+  .main-content .tariff-item:first-child,
+  .main-content .tariff-item:last-child {
+    margin: 10px 0;
+  }
   .main-content .pristavka {
     justify-content: center;
     flex-wrap: wrap;
+  }
+  .main-content .pristavka-item:first-child,
+  .main-content .pristavka-item:last-child {
+    margin: 10px 0;
   }
   .main-content .list-item:active,
   .main-content .list-item:focus {

@@ -283,10 +283,16 @@ h4 {
             .tariff {
                 justify-content: center;
                 flex-wrap: wrap;
+                &-item:first-child, &-item:last-child {
+                    margin: 10px 0;
+                }
             }
             .pristavka {
                 justify-content: center;
                 flex-wrap: wrap;
+                &-item:first-child, &-item:last-child {
+                    margin: 10px 0;
+                }
             }
             .list-item:active, .list-item:focus {
                 background: @color-style!important;
