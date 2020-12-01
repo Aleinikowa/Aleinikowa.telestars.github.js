@@ -124,7 +124,7 @@ h4 {
 .main-content .pristavka-item {
   margin: 0 10px 5px 10px;
   min-width: 300px;
-  min-height: 400px;
+  min-height: 350px;
   cursor: pointer;
   border: #ccc solid 1px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -159,11 +159,11 @@ h4 {
 }
 .main-content .pristavka .pristavkaBase {
   background: url(2.png) no-repeat center top;
-  background-size: contain;
+  background-size: 80%;
 }
 .main-content .pristavka .pristavkaPremium {
   background: url(1.png) no-repeat center top;
-  background-size: contain;
+  background-size: 80%;
 }
 .main-content .checkbox {
   max-width: 640px;
@@ -173,9 +173,6 @@ h4 {
 }
 .main-content .checkbox-item {
   margin: 20px 0 0;
-}
-.main-content .checkbox-item label {
-  padding: 0 40px;
 }
 .main-content .checkbox-item input {
   position: absolute;
