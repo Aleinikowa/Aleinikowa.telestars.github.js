@@ -64,8 +64,13 @@ h4 {
             justify-content: space-between;
             overflow: hidden;
             height: auto;
-            &-item {
+            &-item:first-child {
                 margin: 0 10px 5px 0;
+            } 
+            &-item:last-child {
+                margin: 0 0 5px 10px;
+            } 
+            &-item {
                 background: url(https://zipupload.org/telestar/wp-content/themes/satenet/assets/images/pricing-bg.png) no-repeat;
                 background-position: top -5em left -13em;
                 min-width: 300px;
@@ -126,8 +131,13 @@ h4 {
             border-radius: 10px;
             overflow: hidden;
             height: auto;
-            &-item {
+            &-item:first-child {
                 margin: 0 10px 5px 0;
+            } 
+            &-item:last-child {
+                margin: 0 0 5px 10px;
+            } 
+            &-item {
                 min-width: 300px;
                 min-height: 350px;
                 cursor: pointer;
