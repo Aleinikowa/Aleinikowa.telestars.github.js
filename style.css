@@ -65,7 +65,7 @@ h4 {
   margin: 0 10px 5px 10px;
   background: url(https://zipupload.org/telestar/wp-content/themes/satenet/assets/images/pricing-bg.png) no-repeat;
   background-position: top -5em left -18em;
-  width: 45%;
+  min-width: 300px;
   min-height: 270px;
   cursor: pointer;
   border: #ccc solid 1px;
@@ -123,7 +123,7 @@ h4 {
 }
 .main-content .pristavka-item {
   margin: 0 10px 5px 10px;
-  width: 45%;
+  min-width: 250px;
   min-height: 400px;
   cursor: pointer;
   border: #ccc solid 1px;
@@ -173,6 +173,9 @@ h4 {
 }
 .main-content .checkbox-item {
   margin: 20px 0 0;
+}
+.main-content .checkbox-item label {
+  padding: 0 40px;
 }
 .main-content .checkbox-item input {
   position: absolute;
@@ -250,7 +253,19 @@ h4 {
 .main-content .btn-order:hover {
   background: linear-gradient(to bottom, #000 0%, #000 100%);
 }
-.main-content .list-item:hover {
+.main-content .list-item:hover,
+.main-content .list-item:active,
+.main-content .list-item::focus {
   background: rgba(0, 0, 0, 0.1) !important;
   color: #973cdf !important;
+}
+@media only screen and (max-width: 885px) {
+  .main-content .tariff {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .main-content .pristavka {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

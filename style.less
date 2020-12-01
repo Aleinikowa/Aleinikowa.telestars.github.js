@@ -1,3 +1,5 @@
+@color-style: #973cdf;
+
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -49,8 +51,6 @@ h4 {
     display: none !important;
 }
 
-@color-style: #973cdf;
-
 .main {
     width: 100%;
     height: 400px;
@@ -68,7 +68,7 @@ h4 {
                 margin: 0 10px 5px 10px;
                 background: url(https://zipupload.org/telestar/wp-content/themes/satenet/assets/images/pricing-bg.png) no-repeat;
                 background-position: top -5em left -18em;
-                width: 45%;
+                min-width: 300px;
                 min-height: 270px;
                 cursor: pointer;
                 border: #ccc solid 1px;
@@ -128,7 +128,7 @@ h4 {
             height: auto;
             &-item {
                 margin: 0 10px 5px 10px;
-                width: 45%;
+                min-width: 250px;
                 min-height: 400px;
                 cursor: pointer;
                 border: #ccc solid 1px;
@@ -179,6 +179,9 @@ h4 {
             text-align: center;
             &-item {
                 margin: 20px 0 0;
+                label {
+                    padding: 0 40px;
+                }
                 input {
                     position: absolute;
                     z-index: -1;
@@ -192,7 +195,7 @@ h4 {
                     align-items: center;
                     user-select: none;
                 }
-                  input+label::before {
+                input+label::before {
                     content: '';
                     display: inline-block;
                     width: 1em;
@@ -256,10 +259,24 @@ h4 {
         .btn-order:hover {
             background: linear-gradient(to bottom,#000 0%,#000 100%);
         }
-        .list-item:hover {
+        .list-item:hover, .list-item:active, .list-item::focus {
             background: rgba(0, 0, 0, 0.1) !important;
             color: @color-style !important;
         }
-        
     }
+}
+
+@media only screen and (max-width: 885px) {
+    .main {
+        &-content {
+            .tariff {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .pristavka {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }    
+    }    
 }
