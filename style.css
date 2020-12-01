@@ -257,6 +257,11 @@ h4 {
   background: rgba(0, 0, 0, 0.1) !important;
   color: #973cdf !important;
 }
+.main-content .list-item:active,
+.main-content .list-item:focus {
+  background: #973cdf !important;
+  color: #fff !important;
+}
 @media only screen and (max-width: 800px) {
   .main-content .tariff {
     justify-content: center;

@@ -40,12 +40,12 @@ agreement.addEventListener('click', ()=> disabledBtn());
 money.addEventListener('click', ()=> disabledBtn());
 
 btnPristavkaYes.onclick = () => {
-    blockPristavka.classList.toggle('show');
+    blockPristavka.classList.remove('show');
     activeElement(btnPristavkaYes);
 };
 
 btnPristavkaNo.onclick = () => {
-    blockPristavka.classList.toggle('show');
+    blockPristavka.classList.add('show');
     activeElement(btnPristavkaNo);
 }
 
