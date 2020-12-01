@@ -24,15 +24,21 @@ h4 {
   font-size: 24px;
 }
 .active {
-  background-color: #973cdf;
+  background-color: #973cdf !important;
+  color: #fff !important;
+}
+.active h2,
+.active h4,
+.active p {
   color: #fff !important;
 }
 .active_block {
-  background: none !important;
+  border: 1px solid #973cdf !important;
+}
+.active_block .text {
   background-color: #973cdf !important;
 }
-.active_block h2,
-.active_block h2 {
+.active_block .text h2 {
   color: #fff !important;
 }
 .show {
@@ -45,6 +51,42 @@ h4 {
 .main-content {
   padding: 30px 0;
 }
+.main-content .tariff {
+  max-width: 640px;
+  margin: 20px auto 75px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  overflow: hidden;
+  height: auto;
+}
+.main-content .tariff-item {
+  margin: 0 10px 5px 10px;
+  background: url(https://zipupload.org/telestar/wp-content/themes/satenet/assets/images/pricing-bg.png) no-repeat;
+  background-position: top -5em left -18em;
+  width: 45%;
+  min-height: 270px;
+  cursor: pointer;
+  border: #ccc solid 1px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.main-content .tariff-item h4 {
+  padding: 45px 0 0;
+}
+.main-content .tariff-item h2 span {
+  font-weight: 700;
+}
+.main-content .tariff-item p {
+  padding: 17px 0 15px 0;
+  margin: 0 0 0 0;
+  width: 100%;
+  color: #333;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+}
 .main-content .list {
   max-width: 640px;
   margin: 20px auto 75px;
@@ -54,9 +96,7 @@ h4 {
   border: #ccc solid 1px;
   border-radius: 10px;
   overflow: hidden;
-  height: 60px;
-  margin-top: 20px;
-  margin-bottom: 75px;
+  height: auto;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 .main-content .list-item {
@@ -79,29 +119,106 @@ h4 {
   border-radius: 10px;
   overflow: hidden;
   height: auto;
-  margin-top: 20px;
-  margin-bottom: 75px;
 }
 .main-content .pristavka-item {
   margin: 0 10px 5px 10px;
-  background: url(https://zipupload.org/telestar/wp-content/themes/satenet/assets/images/pricing-bg.png) no-repeat center center;
   width: 45%;
-  min-height: 270px;
+  min-height: 400px;
   cursor: pointer;
   border: #ccc solid 1px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   text-align: center;
+  position: relative;
 }
-.main-content .pristavka-item h4 {
-  padding: 45px 0;
+.main-content .pristavka-item .text {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border-radius: 9px;
 }
-.main-content .pristavka-item h2 span {
+.main-content .pristavka-item .text h2:first-child {
+  margin: 0;
+  padding-top: 10px;
+}
+.main-content .pristavka-item .text h2:last-child {
+  font-size: 20px;
+  margin: 0;
+  padding-bottom: 10px;
+  text-shadow: none;
+}
+.main-content .pristavka-item .text h2:last-child span {
   display: block;
   font-weight: 700;
-  padding-top: 30px;
+}
+.main-content .pristavka .pristavkaBase {
+  background: url(2.png) no-repeat center top;
+  background-size: contain;
+}
+.main-content .pristavka .pristavkaPremium {
+  background: url(1.png) no-repeat center top;
+  background-size: contain;
 }
 .main-content .list-item:hover {
   background: rgba(0, 0, 0, 0.1) !important;
+}
+.main-content .checkbox {
+  max-width: 640px;
+  margin: 20px auto 75px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.main-content .checkbox-item {
+  margin: 20px 0 0;
+}
+.main-content .checkbox-item input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.main-content .checkbox-item input:hover {
+  cursor: pointer !important;
+}
+.main-content .checkbox-item input + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.main-content .checkbox-item input + label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.main-content .checkbox-item input:checked + label::before {
+  border-color: #973cdf;
+  background-color: #973cdf;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+.main-content .checkbox-item input:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #973cdf;
+}
+.main-content .checkbox-item input:not(:disabled):active + label::before {
+  background-color: #973cdf;
+  border-color: #973cdf;
+}
+.main-content .checkbox-item input:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.main-content .checkbox-item input:focus:not(:checked) + label::before {
+  border-color: #973cdf;
+}
+.main-content .checkbox-item input:disabled + label::before {
+  background-color: #e9ecef;
 }
 .main-content .btn-order {
   padding: 13px 0;
@@ -121,6 +238,12 @@ h4 {
   transition: all 0.5s ease 0s;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
   background: linear-gradient(to bottom, #973cdf 0%, #973cdf 100%);
+}
+.main-content button:disabled,
+.main-content button[disabled] {
+  background: none;
+  background-color: #fff;
+  color: #666666;
 }
 .main-content .btn-order:hover {
   background: linear-gradient(to bottom, #000 0%, #000 100%);

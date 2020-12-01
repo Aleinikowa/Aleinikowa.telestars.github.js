@@ -8,12 +8,14 @@ const tariffBase = document.getElementsByClassName('base')[0],
     btnPristavkaYes = document.getElementsByClassName('btn-pristavka-yes')[0],
     itemPristavkaBase = document.getElementsByClassName('pristavkaBase')[0],
     itemPristavkaPremium = document.getElementsByClassName('pristavkaPremium')[0],
-    btnOrder = document.getElementsByClassName('btn-order')[0];
+    btnOrder = document.getElementsByClassName('btn-order')[0],
+    agreement = document.getElementById('agreement'),
+    money = document.getElementById('money');
 
 let objServices = {
         tariff : 'base',
         period : '6',
-        pristavka : false,
+        pristavka : 'false',
         type : ''
     };
  
@@ -34,6 +36,8 @@ oneYer.addEventListener('click', ()=> activeElement(oneYer));
 itemPristavkaBase.addEventListener('click', ()=> activeBlock(itemPristavkaBase));
 itemPristavkaPremium.addEventListener('click', ()=> activeBlock(itemPristavkaPremium));
 btnOrder.addEventListener('click', ()=> orderPrice());
+agreement.addEventListener('click', ()=> disabledBtn());
+money.addEventListener('click', ()=> disabledBtn());
 
 btnPristavkaYes.onclick = () => {
     blockPristavka.classList.toggle('show');
@@ -79,3 +83,13 @@ function orderPrice() {
     }
     localStorage.setItem('orderPrice', sum);
 }
+
+function disabledBtn() {
+    if (agreement.checked && money.checked) {
+        btnOrder.disabled = false;
+    } else {
+        btnOrder.disabled = true;
+    }
+}
+
+disabledBtn()

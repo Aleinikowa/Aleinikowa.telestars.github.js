@@ -12,9 +12,17 @@
     <section class="main">
         <div class="main-content">
             <h3>Выберите тариф</h3>
-            <div class="list" id="block_tariff">
-                <a class="list-item base active" data-key="base" data-name="tariff">Базовый</a>
-                <a class="list-item premium" data-key="premium" data-name="tariff">Премиум</a>
+            <div class="tariff" id="block_tariff">
+                <a class="tariff-item base active" data-key="premium" data-name="tariff">
+                    <h4>Премиальный</h4>
+                    <h2> <span>3 €</span>/mo</h2>
+                    <p>300+ популярных каналов<br>в том числе 4 тематических пакета<br>Архив на 14 дней</p>
+                </a>
+                <a class="tariff-item premium" data-key="base" data-name="tariff">
+                    <h4>Базовый</h4>
+                    <h2> <span>3 €</span>/mo</h2>
+                    <p>Свыше 60 популярных каналов<br>Архив на 14 дней</p>
+                </a>
             </div>
             <h3>Выберите период подписки</h3>
             <div class="list" id="block_period">
@@ -29,15 +37,29 @@
             </div>
             <div class="pristavka show" id="block-item_pristavka">
                 <div class="pristavka-item pristavkaBase" data-key="min" data-name="type">
-                    <h4>Приставка 4K</h4>
-                    <h2>Цена аренды в месяц: <span>3 €</span></h2>
+                    <div class="text">
+                        <h2>Приставка 4K</h2>
+                        <h2>Цена аренды в месяц: <span>3 €</span></h2>
+                    </div>
                 </div>
                 <div class="pristavka-item pristavkaPremium" data-key="max" data-name="type">
-                    <h4>Приставка 4K Plus</h4>
-                    <h2>Цена аренды в месяц:<span>6 €</span></h2>
+                    <div class="text">
+                        <h2>Приставка 4K Plus</h2>
+                        <h2>Цена аренды в месяц:<span>6 €</span></h2>
+                    </div>    
                 </div>
             </div>
-            <button class="btn-order">Заказать</button>
+            <div class="checkbox">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="agreement" name="agreement" value="yes">
+                    <label for="agreement">я принимаю условия пользовательского соглашения</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="money" name="money" value="yes">
+                    <label for="money">я согласен на автоматическое списание средств</label>
+                </div>
+            </div>
+            <button disabled class="btn-order">Заказать</button>
         </div>
     </section>
     <script src="main.js"></script>

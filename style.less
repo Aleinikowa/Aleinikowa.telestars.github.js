@@ -28,15 +28,20 @@ h4 {
 }
 
 .active {
-    background-color: @color-style;
+    background-color: @color-style !important;
     color: #fff !important;
+    h2, h4, p {
+        color: #fff !important;
+    }
 }
 
 .active_block {
-    background: none !important;
-    background-color: @color-style !important;
-    h2, h2 {
-        color: #fff !important;
+    border: 1px solid @color-style !important;
+    .text {
+        background-color:@color-style !important;
+        h2 {
+            color: #fff !important;
+        }
     }
 }
 
@@ -51,6 +56,44 @@ h4 {
     height: 400px;
     &-content {
         padding: 30px 0;
+        .tariff {
+            max-width: 640px;
+            margin: 20px auto 75px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            overflow: hidden;
+            height: auto;
+            &-item {
+                margin: 0 10px 5px 10px;
+                background: url(https://zipupload.org/telestar/wp-content/themes/satenet/assets/images/pricing-bg.png) no-repeat;
+                background-position: top -5em left -18em;
+                width: 45%;
+                min-height: 270px;
+                cursor: pointer;
+                border: #ccc solid 1px;
+                border-radius: 10px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+                text-align: center;
+                h4 {
+                    padding: 45px 0 0;
+                }
+                h2 {
+                    span {
+                        font-weight: 700;
+                    }
+                }
+                p {
+                    padding: 17px 0 15px 0;
+                    margin: 0 0 0 0;
+                    width: 100%;
+                    color: #333;
+                    text-align: center;
+                    line-height: 25px;
+                    font-size: 14px;
+                }
+            }
+        }
         .list {
             max-width: 640px;
             margin: 20px auto 75px;
@@ -60,9 +103,7 @@ h4 {
             border: #ccc solid 1px;
             border-radius: 10px;
             overflow: hidden;
-            height: 60px;
-            margin-top: 20px;
-            margin-bottom: 75px;
+            height: auto;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             &-item {
                 width: 50%;
@@ -85,31 +126,107 @@ h4 {
             border-radius: 10px;
             overflow: hidden;
             height: auto;
-            margin-top: 20px;
-            margin-bottom: 75px;
             &-item {
                 margin: 0 10px 5px 10px;
-                background: url(https://zipupload.org/telestar/wp-content/themes/satenet/assets/images/pricing-bg.png) no-repeat center center;
                 width: 45%;
-                min-height: 270px;
+                min-height: 400px;
                 cursor: pointer;
                 border: #ccc solid 1px;
                 box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+                border-radius: 10px;
                 text-align: center;
-                h4 {
-                    padding: 45px 0;
-                }
-                h2 {
-                    span {
-                        display: block;
-                        font-weight: 700;
-                        padding-top: 30px;
+                position: relative;
+                .text {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    border-radius: 9px;
+                    h2:first-child {
+                        margin: 0;
+                        padding-top: 10px;
+                    }
+                    h2:last-child {
+                        font-size: 20px;
+                        margin: 0;
+                        padding-bottom: 10px;
+                        text-shadow: none;
+                        span {
+                            display: block;
+                            font-weight: 700;
+                        }
                     }
                 }
-            }    
+               
+            } 
+            .pristavkaBase {
+                background: url(./2.png) no-repeat center top;
+                background-size: contain;
+            }
+            .pristavkaPremium {
+                background: url(./1.png) no-repeat center top;
+                background-size: contain;
+            }  
         }
         .list-item:hover {
             background: rgba(0, 0, 0, 0.1) !important;
+        }
+        .checkbox {
+            max-width: 640px;
+            margin: 20px auto 75px;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            &-item {
+                margin: 20px 0 0;
+                input {
+                    position: absolute;
+                    z-index: -1;
+                    opacity: 0;
+                }
+                input:hover {
+                    cursor: pointer !important;
+                }
+                input+label {
+                    display: inline-flex;
+                    align-items: center;
+                    user-select: none;
+                }
+                  input+label::before {
+                    content: '';
+                    display: inline-block;
+                    width: 1em;
+                    height: 1em;
+                    flex-shrink: 0;
+                    flex-grow: 0;
+                    border: 1px solid #adb5bd;
+                    border-radius: 0.25em;
+                    margin-right: 0.5em;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 50% 50%;
+                }
+                input:checked+label::before {
+                    border-color: @color-style;
+                    background-color: @color-style;
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+                }
+                input:not(:disabled):not(:checked)+label:hover::before {
+                    border-color: @color-style;
+                }
+                input:not(:disabled):active+label::before {
+                    background-color: @color-style;
+                    border-color: @color-style;
+                }
+                input:focus+label::before {
+                    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+                }
+                input:focus:not(:checked)+label::before {
+                    border-color: @color-style;
+                }
+                input:disabled+label::before {
+                    background-color: #e9ecef;
+                }
+            }
         }
         .btn-order {
             padding: 13px 0;
@@ -129,6 +246,11 @@ h4 {
             transition: all .5s ease 0s;
             box-shadow: 0 1px 2px 0 rgba(0,0,0,.4);
             background: linear-gradient(to bottom,#973cdf 0%,#973cdf 100%);
+        }
+        button:disabled, button[disabled]{
+            background: none;
+            background-color: #fff;
+            color: #666666;
         }
         .btn-order:hover {
             background: linear-gradient(to bottom,#000 0%,#000 100%);
