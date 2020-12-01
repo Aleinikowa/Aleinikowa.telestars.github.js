@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+    <title>Document</title>    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <section class="main">
+        <div class="main-content">
+            <h3>Выберите тариф</h3>
+            <div class="list" id="block_tariff">
+                <a class="list-item base active" data-key="base" data-name="tariff">Базовый</a>
+                <a class="list-item premium" data-key="premium" data-name="tariff">Премиум</a>
+            </div>
+            <h3>Выберите период подписки</h3>
+            <div class="list" id="block_period">
+                <a class="list-item threeMonths" data-key="3" data-name="period">3 месяца</a>
+                <a class="list-item sixMonths active" data-key="6" data-name="period">6 месяцев</a>
+                <a class="list-item oneYer" data-key="12" data-name="period">1 год</a>
+            </div>
+            <h3>Нужна ли вам приставка?</h3>
+            <div class="list pr" id="block_pristavka">
+                <a class="list-item btn-pristavka-yes" data-key="true" data-name="pristavka">Да, нужна</a>
+                <a class="list-item active btn-pristavka-no" data-key="false" data-name="pristavka">Нет, у меня есть приставка</a>
+            </div>
+            <div class="pristavka show" id="block-item_pristavka">
+                <div class="pristavka-item pristavkaBase" data-key="min" data-name="type">
+                    <h4>Приставка 4K</h4>
+                    <h2>Цена аренды в месяц: <span>3 €</span></h2>
+                </div>
+                <div class="pristavka-item pristavkaPremium" data-key="max" data-name="type">
+                    <h4>Приставка 4K Plus</h4>
+                    <h2>Цена аренды в месяц:<span>6 €</span></h2>
+                </div>
+            </div>
+            <button class="btn-order">Заказать</button>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
