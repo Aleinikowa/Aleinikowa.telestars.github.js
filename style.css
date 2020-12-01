@@ -159,9 +159,6 @@ h4 {
   background: url(1.png) no-repeat center top;
   background-size: contain;
 }
-.main-content .list-item:hover {
-  background: rgba(0, 0, 0, 0.1) !important;
-}
 .main-content .checkbox {
   max-width: 640px;
   margin: 20px auto 75px;
@@ -247,4 +244,8 @@ h4 {
 }
 .main-content .btn-order:hover {
   background: linear-gradient(to bottom, #000 0%, #000 100%);
+}
+.main-content .list-item:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: #973cdf !important;
 }
