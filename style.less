@@ -259,7 +259,11 @@ h4 {
         .btn-order:hover {
             background: linear-gradient(to bottom,#000 0%,#000 100%);
         }
-        .list-item:hover, .list-item:active, .list-item::focus {
+        .list-item:hover {
+            background: rgba(0, 0, 0, 0.1) !important;
+            color: @color-style !important;
+        }
+        .list-item:active, .list-item:focus {
             background: rgba(0, 0, 0, 0.1) !important;
             color: @color-style !important;
         }
