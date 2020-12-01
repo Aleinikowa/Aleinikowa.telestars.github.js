@@ -39,7 +39,7 @@ h4 {
     border: 1px solid @color-style !important;
     .text {
         background-color:@color-style !important;
-        h2 {
+        h2, p {
             color: #fff !important;
         }
     }
@@ -141,14 +141,18 @@ h4 {
                     width: 100%;
                     bottom: 0;
                     border-radius: 9px;
+                    p {
+                        margin: 0;
+                        padding: 0;
+                    }
                     h2:first-child {
                         margin: 0;
-                        padding-top: 10px;
+                        padding: 10px 0;
                     }
                     h2:last-child {
                         font-size: 20px;
                         margin: 0;
-                        padding-bottom: 10px;
+                        padding: 10px 0 20px;
                         text-shadow: none;
                         span {
                             display: block;
